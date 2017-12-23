@@ -4,7 +4,7 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-var jsonParser = bodyParser.json();
+// var jsonParser = bodyParser.json();
 
 var urlencodedParser = bodyParser.urlencoded ({ extended: false});
 
@@ -12,11 +12,11 @@ var urlencodedParser = bodyParser.urlencoded ({ extended: false});
 //     res.send("Linked!!");
 // });
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use (bodyParser.json({ type: "application/*+json" }));
 
-app.use(bodyParser.raw ({ type: "application/vnd.custom-type" }));
+app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 
 app.use(bodyParser.text({ type: "text/html" }));
 
@@ -25,6 +25,9 @@ app.use(bodyParser.text({ type: "text/html" }));
 //     res.write("You posted: \n");
 //     res.end(JSON.stringify(req.body, null, 2))
 // });
+
+require("./app/routing/htmlRoutes.js")(app);
+require("./app/routing/apiRoutes.js")(app);
 
 app.listen(PORT, function() {
     console.log("Listening on Port: " + PORT);

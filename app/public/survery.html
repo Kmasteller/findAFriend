@@ -41,14 +41,149 @@
         </select>
 
         <br>
-        
+
+        <h3><strong>Question 2</strong></h3>
+        <h4>You like small animals.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q2">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 3</strong></h3>
+        <h4>Sometimes you like your friends more than your family.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q3">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 4</strong></h3>
+        <h4>Star Wars is an important part of my life and helped become the person I am today.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q4">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 5</strong></h3>
+        <h4>Hot dogs and pork and beans are disgusting.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q5">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 6</strong></h3>
+        <h4>Kenneth is a majestic name.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q6">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 7</strong></h3>
+        <h4>Sometimes I prefer to take a bath over a shower.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q7">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 8</strong></h3>
+        <h4>I like attending bootcamps for coding.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q8">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 9</strong></h3>
+        <h4>Marvel makes great movies but only when Thor is involved.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q9">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
+        <h3><strong>Question 10</strong></h3>
+        <h4>I like to break things when I am upset.</h4>
+        <select data-placeholeder="" class="chosen-select" id="q10">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+
         <footer class="footer">
             <div class="container">
-            <p><a href="/api/friendsList">API Friends List</a> | <a href="/api/githubrepo">GitHub Repo</a></p>
+            <p><a href="../api/friends">API Friends List</a> | <a href="/api/githubrepo">GitHub Repo</a></p>
             </div>
         </footer>
 
     </div>   
+    <script>
+        $("#findFriends").on("click", function () {
+            var userObj = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: []
+            }
+            for(var i = 1; i <= 2; i++){
+                userObj.scores.push(parseInt($("#q"+ i +" :selected").attr("value")))
+            }
+            console.log(userObj);
+
+            $.post('/api/friends', userObj, function(res) {
+                console.log(res)
+            })
+        })
+    
+    </script>
     
 </body>
 </html>
