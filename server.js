@@ -1,18 +1,19 @@
 var bodyParser = require("body-parser");
 var express = require("express");
+var path = require("path");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
 // var jsonParser = bodyParser.json();
 
-var urlencodedParser = bodyParser.urlencoded ({ extended: false});
+app.use(bodyParser.urlencoded ({ extended: true }));
 
 // app.port("/", function (req, res) {
 //     res.send("Linked!!");
 // });
 
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use (bodyParser.json({ type: "application/*+json" }));
 
@@ -26,8 +27,8 @@ app.use(bodyParser.text({ type: "text/html" }));
 //     res.end(JSON.stringify(req.body, null, 2))
 // });
 
-require("./app/routing/htmlRoutes.js")(app);
 require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 app.listen(PORT, function() {
     console.log("Listening on Port: " + PORT);
