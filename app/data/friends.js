@@ -1,7 +1,7 @@
 var friends = [
     {
-      name: "Ahmed",
-      photo: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAq7AAAAJDAwYzI4NTQ4LWYwZWUtNGFkYS1hNTYwLTZjYzkwY2ViZDA3OA.jpg",
+      name: "Fluffy",
+      photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr06/4/16/enhanced-21030-1396642704-15.jpg?downsize=715:*&output-format=auto&output-quality=auto",
       scores: [
         "5",
         "1",
@@ -16,8 +16,8 @@ var friends = [
       ]
     },
     {
-      name: "Jacob Deming",
-      photo: "https://pbs.twimg.com/profile_images/691785039043022849/oWsy8LNR.jpg",
+      name: "Frenchy",
+      photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr02/9/17/enhanced-buzz-6749-1397079428-5.jpg?downsize=715:*&output-format=auto&output-quality=auto",
       scores: [
         "4",
         "2",
@@ -32,8 +32,8 @@ var friends = [
       ]
     },
     {
-      name: "Jeremiah Scanlon",
-      photo: "https://avatars2.githubusercontent.com/u/8504998?v=3&s=460",
+      name: "Frank",
+      photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr02/4/16/enhanced-12294-1396642693-17.jpg?downsize=715:*&output-format=auto&output-quality=auto",
       scores: [
         "5",
         "2",
@@ -48,8 +48,8 @@ var friends = [
       ]
     },
     {
-      name: "Louis T. Delia",
-      photo: "https://pbs.twimg.com/profile_images/639214960049000449/lNCRC-ub.jpg",
+      name: "Feisty",
+      photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr06/4/16/enhanced-20818-1396642699-6.jpg?downsize=715:*&output-format=auto&output-quality=auto",
       scores: [
         "3",
         "3",
@@ -64,8 +64,8 @@ var friends = [
       ]
     },
     {
-      name: "Lou Ritter",
-      photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAkDAAAAJDhhZTI5NTk2LWQzZjUtNDJjZi1hMTM2LTQ3ZjNmYjE0YmY2NA.jpg",
+      name: "Fencester",
+      photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr03/9/17/enhanced-buzz-29071-1397079168-9.jpg?downsize=715:*&output-format=auto&output-quality=auto",
       scores: [
         "4",
         "3",
@@ -80,8 +80,8 @@ var friends = [
       ]
     },
     {
-      name: "Jordan Biason",
-      photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAisAAAAJGUxYzc4YzA0LWQxMzUtNGI4NS04YTFiLTkwYzM0YTZkNzA2NA.jpg",
+      name: "Fronny",
+      photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr06/9/18/enhanced-buzz-10889-1397082636-8.jpg?downsize=715:*&output-format=auto&output-quality=auto",
       scores: [
         "4",
         "4",
