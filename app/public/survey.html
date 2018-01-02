@@ -251,21 +251,23 @@
 
             $.post(currentURL + "/api/friends", userData, function(data) {
 
-                // $("#matchName").text(data.name);
-                // $("#matchImg").attr("src", data.photo);
+                $("#matchName").text(data.name);
+                $("#matchImg").attr("src", data.photo);
 
-                // $("#resultsModal").modal("toggle");
+                $("#resultsModal").modal("toggle");
                 // alert("working");
             });
 
-            // for(var i = 1; i <= 10; i++){
-            //     userData.scores.push(parseInt($("#q"+ i +" :selected").attr("value")))
-            // }
+            for(var i = 1; i <= 10; i++){
+                userData.scores.push(parseInt($("#q"+ i +" :selected").attr("value")))
+            }
             // console.log(userData);
+            // console.log("-----------------------");
 
-            // $.post('/api/friends', userData, function(res) {
-            //     console.log(res)
-            // })
+            $.post('/api/friends', userData, function(res) {
+                // console.log(res)
+                // console.log("************************");
+            })
         } else {
             alert("Please fill out the form completely before continuing.  Thank you!")
         }

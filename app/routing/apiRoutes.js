@@ -17,20 +17,22 @@ module.exports = function(app) {
         var match = {
             name: "",
             photo: "",
-            difference: 100
+            difference: 1000
         };
 
-        console.log(req.body);
+        // console.log(req.body);
+        // console.log("++++++++++++++++++++++");
 
         var userData = req.body;
         var userScores = userData.scores;
 
-        console.log (userScores);
+        // console.log (userScores);
 
         var totalDifference = 0;
 
         for (var i=0; i<friends.length; i++) {
             console.log(friends[i]);
+            console.log("++++++++++++++++++++++++");
             totalDifference = 0;
             for (var j=0; j<friends[i].scores[i]; j++) {    
                 totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
