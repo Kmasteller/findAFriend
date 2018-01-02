@@ -13,7 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/79a7c06388.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.2/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.2/chosen.jquery.min.js"></script>
 </head>
 <body>
     
@@ -27,7 +28,7 @@
         <input type="text" name="" id="name" class="form-control" required>
         
         <h4>Link to Photo Image (Required)</h4>
-        <input type="text" name"" id="photo" class="form-control" required>
+        <input type="text" name="" id="photo" class="form-control" required>
     
         <br>
 
@@ -170,11 +171,13 @@
         <br>
         <footer class="footer">
             <div class="container">
-            <p><a href="../api/friends">API Friends List</a> | <a href="/api/githubrepo">GitHub Repo</a></p>
+            <p><a href="../api/friends">API Friends List</a></p>
             </div>
         </footer>
     </div>
+
     </div> 
+
     <div id="resultsModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -193,7 +196,20 @@
         </div>
     </div>  
     
-    <script>
+    <script type="text/javascript">
+
+        var config = {
+            ".chosen-select": {},
+            ".chosen-select-deselect": { allow_single_deselect: true },
+            ".chosen-select-no-single": { disable_search_threshold: 10 },
+            ".chosen-select-no-results": { no_results_text: "Oops, nothing there!" },
+            ".chosen-select-width": { width: "95%" },
+        }
+
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+
         $("#submit").on("click", function () {
             
             function validateForm() {
@@ -235,10 +251,10 @@
 
             $.post(currentURL + "/api/friends", userData, function(data) {
 
-                $("#matchName").text(data.name);
-                $("#matchImg").attr("src", data.photo);
+                // $("#matchName").text(data.name);
+                // $("#matchImg").attr("src", data.photo);
 
-                $("#resultsModal").modal("toggle");
+                // $("#resultsModal").modal("toggle");
                 // alert("working");
             });
 
